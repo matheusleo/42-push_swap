@@ -1,0 +1,5 @@
+# Binary files
+push_swap
+libft.a
+*.o
+./objects
