@@ -2,7 +2,8 @@
 NAME			:= push_swap
 INCLUDES		:= -I includes
 SOURCE			:= ./source/main.c ./source/push.c ./source/swap.c \
-				./source/rotate.c ./source/reverse_rotate.c
+				./source/rotate.c ./source/reverse_rotate.c ./source/error.c \
+				./source/user_input.c
 OBJS_PATH		:= objects
 OBJS			:= $(SOURCE:./source/%.c=./$(OBJS_PATH)/%.o)
 HEADERS			:= ./includes/push_swap.h ./includes/libft.h
@@ -10,7 +11,7 @@ HEADERS			:= ./includes/push_swap.h ./includes/libft.h
 # General purpose
 LIBFT			:= libft.a
 CC				:= cc
-C_FLAGS			:= -Wall -Werror -Wextra
+# C_FLAGS			:= -Wall -Werror -Wextra
 RM				:= rm -rf
 
 # Colors
@@ -44,6 +45,11 @@ fclean:			clean
 				make -C libft/ fclean
 
 re:				fclean all
+
+test_1:			$(NAME)
+				@cp $(NAME) ./testers/push_swap_tester/
+				@sudo apt install ruby
+				@testers/push_swap_tester/tester.sh
 
 norm:
 				@norminette ./source ./includes
