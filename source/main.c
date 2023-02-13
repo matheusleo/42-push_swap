@@ -6,13 +6,33 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:18 by mleonard          #+#    #+#             */
-/*   Updated: 2023/01/30 09:32:51 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/08 21:55:25 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <push_swap.h>
 
-int	main(void)
+int	shutdown(int status, t_push_swap *push_swap)
 {
-	ft_printf("push+_swap");
+	ft_lstclear(&(push_swap->stack_a), free);
+	ft_lstclear(&(push_swap->stack_b), free);
+	exit(status);
+}
+
+t_push_swap	init_push_swap()
+{
+	t_push_swap	push_swap;
+
+	push_swap.stack_a = NULL;
+	push_swap.stack_b = NULL;
+	return (push_swap);
+}
+
+int	main(int argc, char *argv[])
+{
+	t_push_swap push_swap;
+
+	validate_input(argc, argv);
+	push_swap = init_push_swap();
+	parse_input(argc, argv, &push_swap);
 }
