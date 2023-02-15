@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   user_input.c                                       :+:      :+:    :+:   */
+/*   validator.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 21:59:37 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/13 09:26:31 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 01:13:25 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,38 +27,31 @@ static int	is_all_num(char *arg)
 	return (TRUE);
 }
 
-static int	*convert_atoi(char *nptr, t_push_swap *push_swap)
+void	validate_doubles(t_push_swap *push_swap)
 {
-	int	*temp;
+	t_list		*node_cur;
+	t_list		*cpy;
+	t_stack_el	*stack_el;
+	t_list		*new_node;
 
-	temp = (int *)malloc(sizeof(int));
-	*temp = ft_atoi(nptr);
-	if (*temp == 0 && nptr[0] != '0' && nptr[1] != '0' && nptr[2] != '0')
+	node_cur = push_swap->stack_a;
+	cpy = ft_lstnew(node_cur->content);
+	while (node_cur->next)
 	{
-		free(temp);
-		shutdown(EXIT_FAILURE, push_swap);
+		node_cur = node_cur->next;
+		stack_el = node_cur->content;
+		if (find_nb_in_stack(cpy, stack_el->value))
+		{
+			ft_lstclear_nodes(&cpy);
+			shutdown(EXIT_FAILURE, push_swap);
+		}
+		else
+		{
+			new_node = ft_lstnew(node_cur->content);
+			ft_lstadd_back(&cpy, new_node);
+		}
 	}
-	return (temp);
-}
-
-void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
-{
-	int		idx;
-	int		*temp_nb;
-	t_list	*new_node;
-
-	idx = 1;
-	temp_nb = convert_atoi(argv[idx], push_swap);
-	push_swap->stack_a = ft_lstnew(temp_nb);
-	idx++;
-	while (idx < argc)
-	{
-		temp_nb = convert_atoi(argv[idx], push_swap);
-		new_node = ft_lstnew(temp_nb);
-		ft_lstadd_back(&push_swap->stack_a, new_node);
-		idx++;
-	}
-	shutdown(EXIT_FAILURE, push_swap);
+	ft_lstclear_nodes(&cpy);
 }
 
 void	validate_input(int argc, char *argv[])
