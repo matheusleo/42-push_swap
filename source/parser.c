@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:45:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/14 01:34:54 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:18:41 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 static t_stack_el	*create_new_stack_el(char *nptr, t_push_swap *push_swap)
 {
 	t_stack_el	*temp;
+	long int	nb_temp;
 
 	temp = (t_stack_el *)malloc(sizeof(t_stack_el));
-	temp->value = ft_atoi(nptr);
-	if (temp->value == 0 && nptr[0] != '0' && nptr[1] != '0' && nptr[2] != '0')
+	nb_temp = ft_atol(nptr);
+	if ((nb_temp < MIN_INT || nb_temp > MAX_INT) \
+		|| (nb_temp == 0 && nptr[0] != '0' && nptr[1] != '0' && nptr[2] != '0'))
 	{
 		free(temp);
 		shutdown(EXIT_FAILURE, push_swap);
 	}
+	temp->value = nb_temp;
 	return (temp);
 }
 
@@ -32,6 +35,14 @@ static void	set_pos(t_stack_el *stack_el)
 
 	stack_el->pos = pos;
 	pos++;
+}
+
+void	ft_test(t_list *list)
+{
+	t_stack_el	*stack_el;
+
+	stack_el = list->content;
+	ft_printf("value from list %d\n", stack_el);
 }
 
 void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
@@ -53,6 +64,7 @@ void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
 	}
 	ft_lstiter(push_swap->stack_a, set_pos);
 	validate_doubles(push_swap);
+	ft_lstiter(push_swap->stack_a, ft_test);
 	ft_printf("from before shutdown of the parse_input - ");
 	shutdown(EXIT_FAILURE, push_swap);
 }
