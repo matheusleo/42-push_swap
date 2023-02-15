@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 21:59:37 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 02:12:39 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:23:32 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	validate_input(int argc, char *argv[])
 
 	counter = 1;
 	if (argc == 1)
-		error_handler(": no arg provided");
+		exit(EXIT_SUCCESS);
 	while (counter < argc)
 	{
 		is_all_num(argv[counter]);
