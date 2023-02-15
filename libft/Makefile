@@ -11,7 +11,7 @@ SOURCE		:=	ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 				get_next_line.c get_next_line_2.c get_next_line_utils.c \
 				ft_printf.c ft_print_char.c ft_print_hex.c ft_print_int.c \
 				ft_print_ptr.c ft_print_str.c ft_print_uint.c ft_flag_parser.c utils.c \
-				ft_ternary.c ft_replace.c
+				ft_ternary.c ft_replace.c ft_atol.c
 OBJS		:=	$(SOURCE:.c=.o)
 
 # Bonus part
@@ -21,7 +21,7 @@ BONUSSOURCE	:=	ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c \
 BONUSOBJS	:= $(BONUSSOURCE:.c=.o)
 
 # General purpose
-CC			:=	cc
+CC			:=	clang
 CFLAGS		:=	-Wall -Wextra -Werror
 AR			:=	ar
 ARFLAGS		:=	-rcs
