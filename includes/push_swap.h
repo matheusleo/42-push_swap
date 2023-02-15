@@ -6,15 +6,13 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 01:13:59 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:08:09 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include <libft.h>
-# define MIN_INT 0x80000000
-# define MAX_INT 0x7fffffff
 # define NOT_FOUND 0
 # define FOUND 1
 
