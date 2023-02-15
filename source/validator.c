@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 21:59:37 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 01:13:25 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/15 02:12:39 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	is_all_num(char *arg)
 
 	len = ft_strlen(arg);
 	if (!len)
-		error_handler(": arg with no len provided");
+		error_handler("");
 	while (len-- > 0)
 	{
 		if (!ft_isdigit(arg[len]) && arg[len] != '-' && arg[len] != '+')
-			error_handler(arg);
+			error_handler("");
 	}
 	return (TRUE);
 }
