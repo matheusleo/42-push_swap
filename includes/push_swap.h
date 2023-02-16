@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 02:08:09 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/16 09:23:28 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # include <libft.h>
 # define NOT_FOUND 0
 # define FOUND 1
+# define PA "pa"
+# define PB "pb"
 
 typedef struct s_push_swap
 {
@@ -44,6 +46,9 @@ void	parse_input(int argc, char *argv[], t_push_swap *push_swap);
 
 // Error handler
 void	error_handler(char *msg);
+
+// Actions
+void	push(t_list **from, t_list **to, char *action_id);
 
 // Utils
 void	ft_lstclear_nodes(t_list **list);
