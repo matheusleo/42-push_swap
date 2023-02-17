@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:42:09 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:59:07 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,22 @@ void	parse_input(int argc, char *argv[], t_push_swap *push_swap);
 void	error_handler(char *msg);
 
 // Actions
+/* PUSH */
 void	push(t_list **from, t_list **to, char *action_id);
-void	swap(t_list **stack, char *action_id);
+/* SWAP */
+void	swap(t_list **stack);
+void	swap_a(t_list **stack);
+void	swap_b(t_list **stack);
 void	swap_swap(t_list **stack_a, t_list **stack_b);
-void	rotate(t_list **stack, char *action_id);
+/* ROTATE */
+void	rotate(t_list **stack);
+void	rotate_a(t_list **stack);
+void	rotate_b(t_list **stack);
 void	rotate_rotate(t_list **stack_a, t_list **stack_b);
-void	reverse(t_list **stack, char *action_id);
+/* REVERSE */
+void	reverse(t_list **stack);
+void	reverse_a(t_list **stack);
+void	reverse_b(t_list **stack);
 void	reverse_reverse(t_list **stack_a, t_list **stack_b);
 
 // Utils

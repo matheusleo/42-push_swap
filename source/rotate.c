@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:34:15 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:46:51 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 01:01:32 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,25 @@
 
 void	rotate_rotate(t_list **stack_a, t_list **stack_b)
 {
-	rotate(stack_a, RA);
-	rotate(stack_b, RB);
+	rotate(stack_a);
+	rotate(stack_b);
+	ft_printf("%s\n", RR);
 }
 
-void	rotate(t_list **stack, char *action_id)
+void	rotate_a(t_list **stack_a)
+{
+	rotate(stack_a);
+	ft_printf("%s\n", RA);
+}
+
+void	rotate_b(t_list **stack_b)
+{
+	rotate(stack_b);
+	ft_printf("%s\n", RB);
+}
+
+
+void	rotate(t_list **stack)
 {
 	t_stack_el	*node_content;
 	t_list		*head;
@@ -33,5 +47,4 @@ void	rotate(t_list **stack, char *action_id)
 		*stack = (*stack)->next;
 		free(head);
 	}
-	ft_printf("%s\n", action_id);
 }

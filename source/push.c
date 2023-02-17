@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:08:13 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/16 21:12:56 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:51:01 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ void	push(t_list **from, t_list **to, char *action_id)
 		new_node = ft_lstnew((*from)->content);
 		ft_lstadd_front(to, new_node);
 		lstpop(from);
-		ft_printf("%s\n", action_id);
 	}
+	ft_printf("%s\n", action_id);
 }

@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:34:12 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:46:40 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 01:01:19 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,24 @@ static t_list	*lstfind_idx(t_list *lst, size_t target_idx)
 
 void	reverse_reverse(t_list **stack_a, t_list **stack_b)
 {
-	reverse(stack_a, RRA);
-	reverse(stack_b, RRB);
+	reverse(stack_a);
+	reverse(stack_b);
+	ft_printf("%s\n", RRR);
 }
 
-void	reverse(t_list **stack, char *action_id)
+void	reverse_a(t_list **stack)
+{
+	reverse(stack);
+	ft_printf("%s\n", RRA);
+}
+
+void	reverse_b(t_list **stack)
+{
+	reverse(stack);
+	ft_printf("%s\n", RRB);
+}
+
+void	reverse(t_list **stack)
 {
 	t_list		*tail;
 	t_list		*new_node;
@@ -52,5 +65,4 @@ void	reverse(t_list **stack, char *action_id)
 		new_tail->next = NULL;
 		free(tail);
 	}
-	ft_printf("%s\n", action_id);
 }
