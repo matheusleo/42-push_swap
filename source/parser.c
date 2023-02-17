@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:45:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:43:36 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:48:25 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,6 @@ static void	set_pos(t_stack_el *stack_el)
 
 	stack_el->pos = pos;
 	pos++;
-}
-
-void	ft_test(t_list *list)
-{
-	t_stack_el	*stack_el;
-
-	stack_el = list->content;
-	ft_printf("value from list %d\n", stack_el);
 }
 
 void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
