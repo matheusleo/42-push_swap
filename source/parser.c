@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:45:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 02:18:41 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:43:36 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,4 @@ void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
 	}
 	ft_lstiter(push_swap->stack_a, set_pos);
 	validate_doubles(push_swap);
-	ft_lstiter(push_swap->stack_a, ft_test);
-	ft_printf("from before shutdown of the parse_input - ");
-	shutdown(EXIT_FAILURE, push_swap);
 }

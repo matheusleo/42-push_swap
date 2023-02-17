@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:34:15 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/16 22:05:47 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:46:51 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void	rotate(t_list **stack, char *action_id)
 		ft_lstadd_back(stack, tail);
 		*stack = (*stack)->next;
 		free(head);
-
 	}
 	ft_printf("%s\n", action_id);
 }

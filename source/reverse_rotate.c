@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/30 09:34:12 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:43:05 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:46:40 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_list	*lstfind_idx(t_list *lst, size_t target_idx)
 	cur_idx = 0;
 	if (!lst)
 		return (NULL);
-	while(cur_idx < target_idx && cur_node)
+	while (cur_idx < target_idx && cur_node)
 	{
 		cur_node = cur_node->next;
 		cur_idx++;
