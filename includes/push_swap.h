@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/16 09:23:28 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/16 21:40:17 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@
 # define FOUND 1
 # define PA "pa"
 # define PB "pb"
-
+# define SA "sa"
+# define SB "sb"
+# define SS "ss"
 typedef struct s_push_swap
 {
 	t_list	*stack_a;
@@ -49,6 +51,8 @@ void	error_handler(char *msg);
 
 // Actions
 void	push(t_list **from, t_list **to, char *action_id);
+void	swap(t_list **stack, char *action_id);
+void	swap_swap(t_list **stack_a, t_list **stack_b);
 
 // Utils
 void	ft_lstclear_nodes(t_list **list);
