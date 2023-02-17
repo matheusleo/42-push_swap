@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:12:55 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/17 00:42:09 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@
 # define RA "ra"
 # define RB "rb"
 # define RR "rr"
+# define RRA "rra"
+# define RRB "rrb"
+# define RRR "rrr"
 
 typedef struct s_push_swap
 {
@@ -59,6 +62,8 @@ void	swap(t_list **stack, char *action_id);
 void	swap_swap(t_list **stack_a, t_list **stack_b);
 void	rotate(t_list **stack, char *action_id);
 void	rotate_rotate(t_list **stack_a, t_list **stack_b);
+void	reverse(t_list **stack, char *action_id);
+void	reverse_reverse(t_list **stack_a, t_list **stack_b);
 
 // Utils
 void	ft_lstclear_nodes(t_list **list);
