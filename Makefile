@@ -3,7 +3,8 @@ NAME			:= push_swap
 INCLUDES		:= -I includes
 SOURCE			:= ./source/main.c ./source/push.c ./source/swap.c \
 				./source/rotate.c ./source/reverse_rotate.c ./source/error.c \
-				./source/parser.c ./source/validator.c ./source/utils.c
+				./source/parser.c ./source/validator.c ./source/utils.c \
+				./source/index.c
 OBJS_PATH		:= objects
 OBJS			:= $(SOURCE:./source/%.c=./$(OBJS_PATH)/%.o)
 HEADERS			:= ./includes/push_swap.h ./includes/libft.h

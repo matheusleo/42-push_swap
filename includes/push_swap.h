@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:59:07 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/19 16:52:13 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ typedef struct s_push_swap
 
 typedef struct s_stack_el
 {
-	int	value;
-	int	index;
-	int	pos;
-	int	target_pos;
-	int	cost_a;
-	int	cost_b;
+	int		value;
+	size_t	index;
+	size_t	pos;
+	size_t	target_pos;
+	int		cost_a;
+	int		cost_b;
 }			t_stack_el;
 
 // Management functions
@@ -55,6 +55,9 @@ void	parse_input(int argc, char *argv[], t_push_swap *push_swap);
 
 // Error handler
 void	error_handler(char *msg);
+
+// Index handler
+t_list	*set_indexes(t_list **stack);
 
 // Actions
 /* PUSH */
