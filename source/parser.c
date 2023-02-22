@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:45:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/19 17:09:38 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:57:07 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,6 @@ static t_stack_el	*create_stack_el(char *nptr, t_push_swap *push_swap)
 	}
 	temp->value = nb_temp;
 	return (temp);
-}
-
-static void	set_pos(t_stack_el *stack_el)
-{
-	static size_t	pos = 0;
-
-	stack_el->pos = pos;
-	pos++;
 }
 
 static t_push_swap	*create_stack(int argc, char **argv, t_push_swap *push_swap)
@@ -60,7 +52,7 @@ static t_push_swap	*create_stack(int argc, char **argv, t_push_swap *push_swap)
 void	parse_input(int argc, char *argv[], t_push_swap *push_swap)
 {
 	create_stack(argc, argv, push_swap);
-	ft_lstiter(push_swap->stack_a, set_pos);
+	set_pos(&push_swap->stack_a);
 	validate_doubles(push_swap);
 	set_indexes(&push_swap->stack_a);
 }

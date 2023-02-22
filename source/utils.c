@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:32:56 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 10:24:50 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:56:49 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,19 @@ t_stack_el	*get_stack_el(t_list *stack)
 	if (stack)
 		return ((t_stack_el *)stack->content);
 	return (NULL);
+}
+
+void	set_pos(t_list **stack)
+{
+	size_t	pos;
+	t_list	*cur_node;
+
+	pos = 0;
+	cur_node = *stack;
+	while (cur_node)
+	{
+		get_stack_el(cur_node)->pos = pos;
+		cur_node = cur_node->next;
+		pos++;
+	}
 }
