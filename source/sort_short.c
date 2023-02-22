@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:23:04 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 09:40:24 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:57:27 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	sort_short(t_push_swap *push_swap)
 				reverse_a(&push_swap->stack_a);
 			else if (stack_a_content->index == 2)
 			{
-				if (((t_stack_el *)stack_a->next->content)->index == 1)
+				if (get_next_el(stack_a)->index == 1)
 					swap_a(&push_swap->stack_a);
 				else
 					reverse_a(&push_swap->stack_a);

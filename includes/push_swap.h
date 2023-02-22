@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 08:56:00 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 09:57:27 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,48 +44,49 @@ typedef struct s_stack_el
 }			t_stack_el;
 
 // Management functions
-int		shutdown(int status, t_push_swap *push_swap);
+int			shutdown(int status, t_push_swap *push_swap);
 
 // Validate user input
-void	validate_input(int argc, char *argv[]);
-void	validate_doubles(t_push_swap *push_swap);
+void		validate_input(int argc, char *argv[]);
+void		validate_doubles(t_push_swap *push_swap);
 
 // Parse user input
-void	parse_input(int argc, char *argv[], t_push_swap *push_swap);
+void		parse_input(int argc, char *argv[], t_push_swap *push_swap);
 
 // Error handler
-void	error_handler(char *msg);
+void		error_handler(char *msg);
 
 // Index handler
-t_list	*set_indexes(t_list **stack);
+t_list		*set_indexes(t_list **stack);
 
 // Sort handlers
-void	sort_stack(t_push_swap *push_swap);
-int		is_stack_sorted(t_list *stack);
-void	sort_short(t_push_swap *push_swap);
-void	sort_long(t_push_swap *push_swap);
+void		sort_stack(t_push_swap *push_swap);
+int			is_stack_sorted(t_list *stack);
+void		sort_short(t_push_swap *push_swap);
+void		sort_long(t_push_swap *push_swap);
 
 // Actions
 /* PUSH */
-void	push(t_list **from, t_list **to, char *action_id);
+void		push(t_list **from, t_list **to, char *action_id);
 /* SWAP */
-void	swap(t_list **stack);
-void	swap_a(t_list **stack);
-void	swap_b(t_list **stack);
-void	swap_swap(t_list **stack_a, t_list **stack_b);
+void		swap(t_list **stack);
+void		swap_a(t_list **stack);
+void		swap_b(t_list **stack);
+void		swap_swap(t_list **stack_a, t_list **stack_b);
 /* ROTATE */
-void	rotate(t_list **stack);
-void	rotate_a(t_list **stack);
-void	rotate_b(t_list **stack);
-void	rotate_rotate(t_list **stack_a, t_list **stack_b);
+void		rotate(t_list **stack);
+void		rotate_a(t_list **stack);
+void		rotate_b(t_list **stack);
+void		rotate_rotate(t_list **stack_a, t_list **stack_b);
 /* REVERSE */
-void	reverse(t_list **stack);
-void	reverse_a(t_list **stack);
-void	reverse_b(t_list **stack);
-void	reverse_reverse(t_list **stack_a, t_list **stack_b);
+void		reverse(t_list **stack);
+void		reverse_a(t_list **stack);
+void		reverse_b(t_list **stack);
+void		reverse_reverse(t_list **stack_a, t_list **stack_b);
 
 // Utils
-void	ft_lstclear_nodes(t_list **list);
-int		find_nb_in_stack(t_list *stack, int nb);
+void		ft_lstclear_nodes(t_list **list);
+int			find_nb_in_stack(t_list *stack, int nb);
+t_stack_el	*get_next_el(t_list *stack);
 
 #endif
