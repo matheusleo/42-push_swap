@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 09:57:27 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:25:16 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,6 @@ void		reverse_reverse(t_list **stack_a, t_list **stack_b);
 // Utils
 void		ft_lstclear_nodes(t_list **list);
 int			find_nb_in_stack(t_list *stack, int nb);
-t_stack_el	*get_next_el(t_list *stack);
+t_stack_el	*get_stack_el(t_list *stack);
 
 #endif

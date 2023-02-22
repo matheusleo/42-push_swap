@@ -6,18 +6,11 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:32:56 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 09:57:27 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 10:24:50 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
-
-t_stack_el	*get_next_el(t_list *stack)
-{
-	if (stack->next)
-		return ((t_stack_el *)stack->next->content);
-	return (NULL);
-}
 
 void	ft_lstclear_nodes(t_list **list)
 {
@@ -51,4 +44,11 @@ int	find_nb_in_stack(t_list *stack, int nb)
 		node_cur = node_cur->next;
 	}
 	return (NOT_FOUND);
+}
+
+t_stack_el	*get_stack_el(t_list *stack)
+{
+	if (stack)
+		return ((t_stack_el *)stack->content);
+	return (NULL);
 }
