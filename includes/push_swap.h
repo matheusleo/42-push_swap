@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 10:52:51 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:32:21 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,5 +89,6 @@ void		ft_lstclear_nodes(t_list **list);
 int			find_nb_in_stack(t_list *stack, int nb);
 t_stack_el	*get_stack_el(t_list *stack);
 void		set_pos(t_list **stack);
+t_list		*stackfind_idx(t_list *stack, size_t idx);
 
 #endif

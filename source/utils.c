@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:32:56 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 10:56:49 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 11:31:52 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,20 @@ void	set_pos(t_list **stack)
 		cur_node = cur_node->next;
 		pos++;
 	}
+}
+
+t_list	*stackfind_idx(t_list *stack, size_t idx)
+{
+	t_list		*cur_node;
+	t_stack_el	*aux;
+
+	cur_node = stack;
+	while (cur_node)
+	{
+		aux = cur_node->content;
+		if (aux->index == idx)
+			return (cur_node);
+		cur_node = cur_node->next;
+	}
+	return (NULL);
 }
