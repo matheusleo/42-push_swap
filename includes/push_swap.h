@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/19 16:52:13 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/22 08:56:00 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,12 @@ void	error_handler(char *msg);
 
 // Index handler
 t_list	*set_indexes(t_list **stack);
+
+// Sort handlers
+void	sort_stack(t_push_swap *push_swap);
+int		is_stack_sorted(t_list *stack);
+void	sort_short(t_push_swap *push_swap);
+void	sort_long(t_push_swap *push_swap);
 
 // Actions
 /* PUSH */
