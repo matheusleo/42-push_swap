@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:35:30 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/24 02:46:56 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:40:01 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ static	t_list	*get_target_node(t_list *cur_node_b, t_push_swap *push_swap)
 	return (NULL);
 }
 
-void	set_target_pos(t_push_swap *push_swap)
+static void	set_target_pos(t_push_swap *push_swap)
 {
 	t_list	*cur_node_b;
 	t_list	*target_node_a;
@@ -55,7 +55,7 @@ void	set_target_pos(t_push_swap *push_swap)
 	}
 }
 
-void	order_sorted_stack(t_list **stack)
+static void	order_sorted_stack(t_list **stack)
 {
 	t_list		*smallest_idx_node;
 	t_stack_el	*smallest_idx_el;
@@ -73,7 +73,7 @@ void	order_sorted_stack(t_list **stack)
 	}
 }
 
-void	push_ordered(t_push_swap *push_swap)
+static void	push_ordered(t_push_swap *push_swap)
 {
 	size_t		half_total_size;
 	t_stack_el	*cur_el;
