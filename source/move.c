@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 23:18:26 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/24 12:19:37 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:34:36 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	execute_move_a(int cost_a, t_list **stack_a)
 	}
 }
 
-void	execute_both_moves(t_stack_el *el, t_list **stack_a, t_list **stack_b)
+void	execute_both_moves(t_stack_el *el, t_list **s_a, t_list **s_b)
 {
 	int			inc_a;
 	int			inc_b;
@@ -63,13 +63,13 @@ void	execute_both_moves(t_stack_el *el, t_list **stack_a, t_list **stack_b)
 		inc_b = -1;
 	while (el->cost_a < 0 && el->cost_b < 0)
 	{
-		reverse_reverse(stack_a, stack_b);
+		reverse_reverse(s_a, s_b);
 		el->cost_a += inc_a;
 		el->cost_b += inc_b;
 	}
 	while (el->cost_a > 0 && el->cost_b > 0)
 	{
-		rotate_rotate(stack_a, stack_b);
+		rotate_rotate(s_a, s_b);
 		el->cost_a += inc_a;
 		el->cost_b += inc_b;
 	}

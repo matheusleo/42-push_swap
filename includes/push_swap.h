@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/24 02:00:42 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:34:14 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ size_t		get_cheapest_move_pos(t_list *stack);
 void		execute_move(size_t pos_b, t_push_swap *push_swap);
 void		execute_move_a(int cost_a, t_list **stack_a);
 void		execute_move_b(int cost_b, t_list **stack_b);
+void		execute_both_moves(t_stack_el *el, t_list **s_a, t_list **s_b);
 
 // Actions
 /* PUSH */
