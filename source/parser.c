@@ -6,18 +6,32 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 20:45:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 10:57:07 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:19:18 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+static t_stack_el	*init_stack_el(void)
+{
+	t_stack_el	*el;
+
+	el = (t_stack_el *)malloc(sizeof(t_stack_el));
+	el->value = 0;
+	el->index = 0;
+	el->pos = 0;
+	el->target_pos = 0;
+	el->cost_a = 0;
+	el->cost_b = 0;
+	return (el);
+}
 
 static t_stack_el	*create_stack_el(char *nptr, t_push_swap *push_swap)
 {
 	t_stack_el	*temp;
 	long int	nb_temp;
 
-	temp = (t_stack_el *)malloc(sizeof(t_stack_el));
+	temp = init_stack_el();
 	nb_temp = ft_atol(nptr);
 	if ((nb_temp < MIN_INT || nb_temp > MAX_INT) \
 		|| (nb_temp == 0 && nptr[0] != '0' && nptr[1] != '0' && nptr[2] != '0'))
