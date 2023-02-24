@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/19 11:16:55 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 11:30:41 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 10:28:49 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static t_list	*get_smallest_no_idx(t_list *stack)
 
 	node_cur = stack;
 	smallest = node_cur;
-	while (smallest && ((t_stack_el *)smallest->content)->index)
+	while (smallest && get_stack_el(smallest)->index)
 		smallest = smallest->next;
 	if (!smallest)
 		return (NULL);

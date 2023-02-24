@@ -14,7 +14,7 @@ HEADERS			:= ./includes/push_swap.h ./includes/libft.h
 # General purpose
 LIBFT			:= libft.a
 CC				:= cc
-# C_FLAGS			:= -Wall -Werror -Wextra
+C_FLAGS			:= -Wall -Werror -Wextra
 RM				:= rm -rf
 
 # Colors

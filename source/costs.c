@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 21:56:29 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 23:42:43 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 02:00:27 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	calculate_cost_b(t_list *stack_b)
 {
 	t_list		*cur_node;
-	int			stack_size;
+	size_t		stack_size;
 	t_stack_el	*cur_el;
 
 	set_pos(&stack_b);
@@ -35,7 +35,7 @@ static void	calculate_cost_b(t_list *stack_b)
 static void	calculate_cost_a(t_list *stack_a, t_list *stack_b)
 {
 	t_list		*node_b;
-	int			stack_a_size;
+	size_t		stack_a_size;
 	t_stack_el	*el_b;
 
 	node_b = stack_b;
@@ -67,7 +67,7 @@ size_t	get_cheapest_move_pos(t_list *stack)
 	{
 		cur_el = cur_node->content;
 		cur_cost = get_abs(cur_el->cost_a) + get_abs(cur_el->cost_b);
-		if (cur_cost <= smallest_cost)
+		if (cur_cost < smallest_cost)
 		{
 			node_smallest_cost = cur_node;
 			smallest_cost = cur_cost;
@@ -77,7 +77,7 @@ size_t	get_cheapest_move_pos(t_list *stack)
 	return (get_stack_el(node_smallest_cost)->pos);
 }
 
-int	calculate_costs(t_push_swap *push_swap)
+void	calculate_costs(t_push_swap *push_swap)
 {
 	calculate_cost_a(push_swap->stack_a, push_swap->stack_b);
 	calculate_cost_b(push_swap->stack_b);

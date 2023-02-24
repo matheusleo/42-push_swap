@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 21:59:37 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/15 02:23:32 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:58:36 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	validate_doubles(t_push_swap *push_swap)
 
 void	validate_input(int argc, char *argv[])
 {
-	size_t	counter;
+	int	counter;
 
 	counter = 1;
 	if (argc == 1)

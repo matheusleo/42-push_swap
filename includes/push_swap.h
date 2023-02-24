@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:24 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/24 01:14:06 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 02:00:42 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void		sort_short(t_push_swap *push_swap);
 void		sort_long(t_push_swap *push_swap);
 
 // Functions related to the cost property
-int			calculate_costs(t_push_swap *push_swap);
+void		calculate_costs(t_push_swap *push_swap);
 size_t		get_cheapest_move_pos(t_list *stack);
 
 // Functions to execute the moves based on the costs

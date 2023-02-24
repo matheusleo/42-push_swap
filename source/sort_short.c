@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 12:23:04 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/22 13:27:18 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:59:05 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ static size_t	has_smallest_idx(t_list *stack)
 void	sort_short(t_push_swap *push_swap)
 {
 	t_list		*stack_a;
-	t_stack_el	*stack_a_content;
 
 	stack_a = push_swap->stack_a;
 	if (ft_lstsize(stack_a) == 2)
@@ -60,7 +59,6 @@ void	sort_short(t_push_swap *push_swap)
 	{
 		while (!is_stack_sorted(stack_a))
 		{
-			stack_a_content = stack_a->content;
 			if (has_greatest_idx(stack_a))
 				rotate_a(&push_swap->stack_a);
 			else if (has_smallest_idx(stack_a))
