@@ -6,7 +6,7 @@
 /*   By: mleonard <mleonard@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 21:48:18 by mleonard          #+#    #+#             */
-/*   Updated: 2023/02/17 00:45:56 by mleonard         ###   ########.fr       */
+/*   Updated: 2023/02/24 01:37:08 by mleonard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ int	main(int argc, char *argv[])
 	validate_input(argc, argv);
 	push_swap = init_push_swap();
 	parse_input(argc, argv, &push_swap);
+	sort_stack(&push_swap);
 	shutdown(EXIT_SUCCESS, &push_swap);
 }
