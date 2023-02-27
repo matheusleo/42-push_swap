@@ -1,8 +1,11 @@
-# Binary files
+# Mandatory - binary files
 push_swap
 libft.a
 *.o
 ./objects
+
+# Bonus - binary files
+checker
 
 # Test fiels
 testers

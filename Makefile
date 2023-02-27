@@ -11,10 +11,18 @@ OBJS_PATH		:= objects
 OBJS			:= $(SOURCE:./source/%.c=./$(OBJS_PATH)/%.o)
 HEADERS			:= ./includes/push_swap.h ./includes/libft.h
 
+# Bonus part
+NAME_BONUS		:= checker
+INCLUDES_BONUS	:= -I includes
+SOURCE_BONUS	:= ./source_checker/main.c
+OBJS_BONUS_PATH	:= objects_bonus
+OBJS_BONUS		:= $(SOURCE_BONUS:./checker/%.c=./$(OBJS_BONUS_PATH)/%.o)
+HEADERS			:= ./includes/checker.h ./includes/push_swap.h ./includes/libft.h
+
 # General purpose
 LIBFT			:= libft.a
 CC				:= cc
-C_FLAGS			:= -Wall -Werror -Wextra
+# C_FLAGS			:= -Wall -Werror -Wextra
 RM				:= rm -rf
 
 # Colors
@@ -23,7 +31,7 @@ RED				:= \033[0;31m
 GREEN			:= \033[0;32m
 BLUE			:= \033[0;34m
 
-# Rules
+# Mandatory Rules
 all:			$(NAME)
 
 $(NAME):		./libft/$(LIBFT) $(OBJS) $(HEADERS)
@@ -53,6 +61,18 @@ fclean:			clean
 
 re:				fclean all
 
+# Bonus rules
+bonus:			$(NAME_BONUS)
+
+$(NAME_BONUS):	./libft/$(LIBFT) $(OBJS_BONUS) $(HEADERS_BONUS)
+				cp ./libft/$(LIBFT) .
+				$(CC) $(C_FLAGS) $(INCLUDES) -o $(NAME_BONUS) $(OBJS_BONUS) $(LIBFT)
+
+./$(OBJS_BONUS_PATH)/%.o:	./checker/%.c
+				@mkdir -p $(OBJS_BONUS_PATH)
+				@$(CC) $(C_FLAGS) -c $(INCLUDES) -o $@ $<
+
+# Extra rules
 test_1:			$(NAME)
 				@cp $(NAME) ./testers/push_swap_tester/
 
